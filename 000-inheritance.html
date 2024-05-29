@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Class Inheritance</h1>
+
+<p>Use the "extends" keyword to inherit all methods from another class.</p>
+<p>Use the "super" method to call the parent's constructor function.</p>
+
+<p id="demo"></p>
+
+<script>
+class Categories {
+  constructor(cname) {
+    this.categoryname = cname;
+  }
+  present() {
+    return 'I have a ' + this.categoryname;
+  }
+}
+
+class Products extends Categories {
+  constructor(cname, product) {
+    super(cname);
+    this.ProductName = product;
+  }
+  show() {
+    return this.present() + ', it is a ' + this.ProductName;
+  }
+}
+
+const myProduct = new Products("Sea Food", "Fish");
+document.getElementById("demo").innerHTML = myProduct.show();
+</script>
+
+</body>
+</html>
